@@ -4,4 +4,4 @@ The codes for this module were written during the DOE WDTS Science Undergraduate
 
 Authors: Joe Aulicino, Dr. Bo Peng 
 
-![alt text](https://www.drupal.org/files/PNNL_Logo_with_Signature_FULL_COLOR_RGB.png)
+<image src=https://www.drupal.org/files/PNNL_Logo_with_Signature_FULL_COLOR_RGB.png)/>
