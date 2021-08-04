@@ -4,4 +4,4 @@ The codes for this module were written during the DOE WDTS Science Undergraduate
 
 Authors: Joe Aulicino, Dr. Bo Peng 
 
-<img src=https://www.drupal.org/files/PNNL_Logo_with_Signature_FULL_COLOR_RGB.png style="width:30px;height:30px;"/>
+<img src=https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Pacific_Northwest_National_Laboratory_logo.svg/1200px-Pacific_Northwest_National_Laboratory_logo.svg.png width="500px"/>
