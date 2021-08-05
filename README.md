@@ -17,10 +17,7 @@ Operator multiplications are conducted using the Pauli comutation rules. This al
 
 <h2> ITE </h2>
 
-In order to run an ITE scheme, first build a hamiltonian. For instance,
-
-`Hamil = Hamiltonian(["XZXZY, IIIIX"], [0.25,1.j])`
-
+The ITE ipython notebook details our method to approximate ITE on Quantum Devices (simulated or otherwise). It walks users through the proccess to build a Hamiltonian, run ITE, and compare it to an analytical solution.
 
 
 ***Authors:*** Joe Aulicino, Dr. Bo Peng 
