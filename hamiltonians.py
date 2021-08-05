@@ -21,6 +21,61 @@ PauliDict["X"] = PauliX
 PauliDict["Y"] = PauliY
 PauliDict["Z"] = PauliZ
 
+#### Taken and modified from https://pennylane.readthedocs.io/en/stable/_modules/pennylane/grouping/utils.html#pauli_word_to_string
+#### Was not included in my install for some reason
+
+def pauli_word_to_string(pauli_word, wire_map=None):
+    """Convert a Pauli word from a tensor to a string.
+
+    Given a Pauli in observable form, convert it into string of
+    characters from ``['I', 'X', 'Y', 'Z']``. This representation is required for
+    functions such as :class:`.PauliRot`.
+
+    Args:
+        pauli_word (Observable): an observable, either a :class:`~.Tensor` instance or
+            single-qubit observable representing a Pauli group element.
+        wire_map (dict[Union[str, int], int]): dictionary containing all wire labels used in
+            the Pauli word as keys, and unique integer labels as their values
+
+    Returns:
+        str: The string representation of the observable in terms of ``'I'``, ``'X'``, ``'Y'``,
+        and/or ``'Z'``.
+
+    Raises:
+        TypeError: if the input observable is not a proper Pauli word.
+
+    **Example**
+
+    >>> wire_map = {'a' : 0, 'b' : 1, 'c' : 2}
+    >>> pauli_word = qml.PauliX('a') @ qml.PauliY('c')
+    >>> pauli_word_to_string(pauli_word, wire_map=wire_map)
+    'XIY'
+    """
+
+    character_map = {"Identity": "I", "PauliX": "X", "PauliY": "Y", "PauliZ": "Z"}
+
+    # If there is no wire map, we must infer from the structure of Paulis
+    if wire_map is None:
+        wire_map = {pauli_word.wires.labels[i]: i for i in range(len(pauli_word.wires))}
+
+    n_qubits = len(wire_map)
+
+    # Set default value of all characters to identity
+    pauli_string = ["I"] * n_qubits
+
+    # Special case is when there is a single Pauli term
+    if not isinstance(pauli_word.name, list):
+        if pauli_word.name != "Identity":
+            wire_idx = wire_map[pauli_word.wires[0]]
+            pauli_string[wire_idx] = character_map[pauli_word.name]
+        return "".join(pauli_string), [pauli_word.wires[0]]
+    lables__ = []
+    for name, wire_label in zip(pauli_word.name, pauli_word.wires):
+        wire_idx = wire_map[wire_label]
+        pauli_string[wire_idx] = character_map[name]
+        lables__ += [wire_label]
+
+
 def chainKron(letters):
     if(len(letters) == 1):
         return PauliDict[letters[0]]
