@@ -6,7 +6,9 @@ The codes for this module were written during the DOE WDTS Science Undergraduate
 
 The Hamiltonian modules contains codes of a Hamiltonian object which the user can manipulate in a number of ways. Hamiltonians are defined as a linear combination of Pauli Strings and their respective coefficients. For instance,
 
-`Hamil = Hamiltonian(["XZXZY, IIIIX"], [0.25,1.j])`
+```python
+Hamil = Hamiltonian(["XZXZY, IIIIX"], [0.25,1.j])
+```
 
 
 The codes provide functionality for operator multiplication, multiplication by a scalar, addition of operators, and grouping operators into functional qubit wise commuting groups (along with many others). 
