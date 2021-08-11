@@ -11,8 +11,8 @@ The Hamiltonian modules contains codes of a Hamiltonian object which the user ca
 
 The codes provide functionality for operator multiplication, multiplication by a scalar, addition of operators, and grouping operators into functional qubit wise commuting groups (along with many others). 
 
-`Hamil = Hamil.multScalar(0.238+1.j)`
-`obs, coeffs = Hamil.grouping()`
+`Hamil = Hamil.multScalar(0.238+1.j) \\
+obs, coeffs = Hamil.grouping()`
 
 Operator multiplications are conducted using the Pauli comutation rules. This allows for operator operations which may not be classically tractable if one were to represent their Hamiltonian as a matrix.
 
