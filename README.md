@@ -27,6 +27,5 @@ The ITE ipython notebook details our method to approximate ITE on Quantum Device
 
 ***Authors:*** Joe Aulicino, Dr. Bo Peng 
 
-<img src=https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Pacific_Northwest_National_Laboratory_logo.svg/1200px-Pacific_Northwest_National_Laboratory_logo.svg.png width="500px"/>
 
-
+**Note:** an updated version of this package will soon be publically available
